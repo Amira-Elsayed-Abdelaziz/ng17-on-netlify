@@ -1,0 +1,19 @@
+
+<div class="col text-center">
+    <div class="card h-100">
+        <img [src]="oneuser.image" class="card-img-top" alt="...">
+        <div class="card-body">
+           
+            <h5 class="card-title">{{oneuser.username}} 
+                @if(oneuser.is_verified)
+                {
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                }
+            @else {
+                <i class="fa-solid fa-star" style="color: #ff3d3d;"></i>
+            }</h5>
+            <p class="card-text">{{oneuser.email}}</p>
+            <p class="card-text">{{oneuser.phone}}</p>
+        </div>
+    </div>
+</div>
