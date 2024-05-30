@@ -1,0 +1,163 @@
+/* * {
+    --text: #00070a;
+    --background: #ebf8ff;
+    --primary: #1496fa;
+    --secondary: #6e73fc;
+    --accent: #6f4ffc;
+    --base: white;
+} */
+body {
+    background: var(--ba);
+}
+
+
+
+.add-button {
+
+    transition: 0.5s;
+    /* background: linear-gradient(135deg, transparent,var(--background));
+    background-size: 200% 200%; */
+    text-shadow: 0 0 5px var(--text);
+    box-shadow: inset 0px 0px 2px 0px var(--primary);
+    color: var(--text)
+        /* box-shadow: 0 0 5px var(--text); */
+
+}
+
+.add-button:hover {
+    background-color: var(--primary);
+    color: var(--text) !important;
+}
+
+.fadeout {
+    /* width:200px; */
+    /* height: 200px; */
+    /* background: red; */
+    opacity: 0;
+}
+
+.elementToFadeout {
+    animation: fadeOut 1s linear forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fadein {
+    /* width:200px; */
+    /* height: 200px; */
+    /* background: red; */
+    opacity: 1;
+}
+
+.elementToFadeIn {
+    animation: fadeIn 1s linear forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+.showOnLoading {
+    font-size: 100%;
+}
+
+.accordion-button::after,
+.accordion-button {
+    color: var(--text) !important;
+}
+
+/*
+#accordionFlushExample {
+     width: 50% !important; 
+
+}
+*/
+.modal-content {
+
+    /* background: linear-gradient(135deg,transparent,var(--bac),var(--background) );
+        background-size: 300% 300%;
+    
+        animation: gradient 5s ease infinite;  */
+    color: var(--background) !important;
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.mapAnchor {
+    display: none;
+}
+
+.card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (max-width: 900px) {
+
+
+    #iframeDiv {
+        /* background-color: lightblue; */
+        display: none;
+    }
+
+    #accordionFlushExample {
+        width: 100% !important;
+        height: 100% !important;
+        overflow: visible !important;
+    }
+
+    div {
+        overflow: visible !important;
+
+    }
+
+    .card-text p {
+        overflow-y: auto !important;
+        height: 70% !important;
+    }
+
+    .mapAnchor {
+        display: block;
+    }
+}
+
+.modal .add-button {
+    color: var(--primary)
+}
