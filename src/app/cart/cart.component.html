@@ -1,0 +1,58 @@
+<h1 class="text-center mt-3">Total : {{total}}</h1>
+<div class="d-flex flex-wrap justify-content-around mt-4 ms-3">
+
+    @for (pro of cart; track $index) {
+    <div class="d-flex border-success border-2 my-3 col-12" style="height: 250px;">
+        <div class=" mt-3 me-3 col-2">
+            <img [src]="pro.thumbnail!" class="card" style="height: 150px; width:200px" alt="...">
+        </div>
+        <div class="d-flex mt-5 justify-content-around col-9" >
+            <div class="col-6">
+                <h6>{{pro.title}}</h6>
+                <p>{{pro.description}}</p>
+                <div>
+                    @if (pro.rating!>4) {
+                    <i class="fa-solid fa-star" style="color: #198754;"></i>
+                    <i class="fa-solid fa-star" style="color: #198754;"></i>
+                    <i class="fa-solid fa-star" style="color: #198754;"></i>
+                    <i class="fa-solid fa-star" style="color: #198754;"></i>
+
+                    }
+                    @else if (pro.rating!>3) {
+                    <i class="fa-solid fa-star" style="color: #198754;"></i>
+                    <i class="fa-solid fa-star" style="color: #198754;"></i>
+                    <i class="fa-solid fa-star" style="color: #198754;"></i>
+
+                    }
+                    @else if (pro.rating!>2) {
+                    <i class="fa-solid fa-star" style="color: #198754;"></i>
+                    <i class="fa-solid fa-star" style="color: #198754;"></i>
+                    }
+                    @else if (pro.rating!>1) {
+                    <i class="fa-solid fa-star" style="color: #198754;"></i>
+                    }
+                    {{pro.rating!}}
+                    <hr>
+                    <div class="">
+                        <span class="text-decoration-line-through p-2 fs-6">{{pro.price!}}$
+                        </span>
+                        <span class="bg-success p-2 fs-6" style="--bs-bg-opacity: .2;">{{pro.price! | dics :
+                            pro.discountPercentage!}}$</span>
+                    </div>
+                </div>
+            </div>
+            <div class=" mb-2 bg-body-secondary mt-3 rounded-pill d-flex justify-content-evenly col-3"
+                style="height: 30px;width:100px">
+                <button class="border border-0 fs-6" (click)="addOne(pro.id!)">+</button>
+                <span class="border border-0 fs-6">{{pro.count!}}</span>
+                <button class="border border-0 fs-6" (click)="minusOne(pro.id!)">-</button>
+            </div>
+            <div class=" mb-2 bg-body-secondary mt-3 rounded-pill d-flex justify-content-evenly"
+                style="height: 30px;width:100px">
+                <button class="border border-0 fs-6" (click)=" deleteFromCart(pro.id!)">X</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    }
+</div>

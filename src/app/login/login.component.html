@@ -1,0 +1,48 @@
+<div class="d-flex flex-column justify-content-between align-items-center mt-5">
+    <div class="d-flex flex-column justify-content-between align-items-center border border-success rounded border-opacity-50"
+        style=" width:50vw">
+        <h1 class="my-4">Login</h1>
+        <!-- <hr> -->
+        <form #loginForm="ngForm" class="form-floating col-6 " (ngSubmit)="handleIt(loginForm)">
+            <div class="form-floating my-4">
+                <input type="email" class="form-control " id="email" placeholder="Email Address" name="email"
+                    [(ngModel)]="login.email" required pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" #loginEmail="ngModel">
+                <label for="email">Email Address</label>
+            </div>
+
+            @if(loginEmail.invalid && loginEmail.touched)
+            {
+            @if(loginEmail.errors?.["required"])
+            {
+            <div class="text-danger">This Field Is Required!</div>
+            }
+            @if(loginEmail.errors?.["pattern"])
+            {
+            <div class="text-danger">Enter Valid Email!</div>
+            }
+
+            }
+
+            <div class="form-floating my-4">
+                <input type="password" class="form-control " id="password" placeholder="Password" name="password"
+                    [(ngModel)]="login.password" required #loginPassword="ngModel">
+                <label for="password">Password</label>
+            </div>
+            @if(loginPassword.invalid && loginPassword.touched)
+            {
+            @if(loginPassword.errors?.["required"])
+            {
+            <div class="text-danger">This Field Is Required!</div>
+            }
+
+
+            }
+            <div class="my-4">
+                <button class="form-control btn btn-success fw-bold" type="submit">Login</button>
+            </div>
+            <div class="my-4">
+            </div>
+        </form>
+         <p class="text-center ">Don't Have Account? <a class="text-success"  routerLink="../regist" >Register</a></p>
+    </div>
+</div>

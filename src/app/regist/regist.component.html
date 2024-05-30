@@ -1,0 +1,86 @@
+<div class="d-flex flex-column justify-content-between align-items-center mt-5">
+    <div class="d-flex flex-column justify-content-between align-items-center border border-success rounded border-opacity-50"
+        style=" width:50vw">
+        <h1 class="my-4">Register</h1>
+        <!-- <hr> -->
+        <form [formGroup]="registForm" class="form-floating col-6 " (ngSubmit)="handleIt()">
+            <div class="form-floating my-4">
+                <input type="text" class="form-control" id="name" placeholder="Name" name="name" formControlName="name">
+                <label for="name">Name</label>
+            </div>
+            @if(registForm.controls['name'].invalid &&registForm.controls['name'].touched ){
+                @if(registForm.controls['name'].errors?.['required'])
+                {
+                    <div class="text-danger">This Field Is Required!</div>
+                }
+            }
+            <div class="form-floating my-4">
+                <input type="email" class="form-control " id="email" placeholder="Email" name="email" formControlName="email">
+                <label for="email">Email</label>
+            </div>
+            @if(registForm.controls['email'].invalid &&registForm.controls['email'].touched ){
+                @if(registForm.controls['email'].errors?.['required'])
+                {
+                    <div class="text-danger">This Field Is Required!</div>
+                }
+                
+                @if(registForm.controls['email'].errors?.['email'])
+                {
+                    <div class="text-danger">Enter Valid Email</div>
+                }
+                
+            }
+            <div class="form-floating my-4">
+                <input type="text" class="form-control " id="username" placeholder="User Name" name="username" formControlName="username">
+                <label for="username">User Name</label>
+            </div>
+            @if(registForm.controls['username'].invalid &&registForm.controls['username'].touched ){
+                @if(registForm.controls['username'].errors?.['required'])
+                {
+                    <div class="text-danger">This Field Is Required!</div>
+                }
+                
+                @if(registForm.controls['username'].errors?.['pattern'])
+                {
+                    <div class="text-danger">No Spaces In User Name</div>
+                }
+            }
+            <div class="form-floating my-4">
+                <input type="password" class="form-control " id="password" placeholder="Password" name="password" formControlName="password">
+                <label for="password">Password</label>
+            </div>
+            @if(registForm.controls['password'].invalid &&registForm.controls['password'].touched ){
+                @if(registForm.controls['password'].errors?.['required'])
+                {
+                    <div class="text-danger">This Field Is Required!</div>
+                }
+                
+                @if(registForm.controls['password'].errors?.['pattern'])
+                {
+                    <div class="text-danger">Enter Valid Password</div>
+                }
+            }
+            <div class="form-floating my-4">
+                <input type="password" class="form-control " id="confpassword" placeholder="Confirm Password" name="confpassword" formControlName="confpassword">
+                <label for="confpassword">Confirm Password</label>
+            </div>
+            @if(registForm.controls['confpassword'].invalid &&registForm.controls['confpassword'].touched ){
+                @if(registForm.controls['confpassword'].errors?.['required'])
+                {
+                    <div class="text-danger">This Field Is Required!</div>
+                }
+                
+                @if(registForm.controls['confpassword'].value != registForm.controls['password'].value)
+                {
+                    <div class="text-danger">Not Confirmed!</div>
+                }
+            }
+            <div class="my-4">
+                <button class="form-control btn btn-success fw-bold" type="submit">Register</button>
+            </div>
+            <div class="my-4">
+            </div>
+        </form>
+        <p class="text-center">Already Have Account! <a class="text-success" routerLink="../login">Login</a></p>
+    </div>
+</div>

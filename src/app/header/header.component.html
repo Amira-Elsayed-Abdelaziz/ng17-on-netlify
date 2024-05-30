@@ -1,0 +1,17 @@
+<ul class="nav nav-tabs d-flex justify-content-evenly mt-4 ">
+    <li class="nav-item">
+        <a class="nav-link " aria-current="page" routerLink="all-pro" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            true}">All Products</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link " routerLink="regist" routerLinkActive="active" >Register</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link " routerLink="login" routerLinkActive="active" >Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="cart" aria-disabled="true" routerLinkActive="active" ><i class="fa-solid fa-cart-plus fa-xl"
+                style="color: #198754;"></i>
+                @if(counter){ : {{counter}}}</a>
+    </li>
+</ul>
