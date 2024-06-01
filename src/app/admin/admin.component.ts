@@ -55,7 +55,7 @@ export class AdminComponent {
       }
     );
     this.http
-      .get('http://127.0.0.1:8000/api/adminNotifications')
+      .get('https://bushub.000webhostapp.com/api/adminNotifications')
       .subscribe((res: any) => {
         // console.log(res);
         this.notifications = res;
@@ -84,7 +84,7 @@ export class AdminComponent {
     if (!this.notifiationsOpened) {
       this.notifiationsOpened = !this.notifiationsOpened;
       this.http
-        .put(`http://127.0.0.1:8000/api/notifications/mark-all-read/${this.userData.id}`, {})
+        .put(`https://bushub.000webhostapp.com/api/notifications/mark-all-read/${this.userData.id}`, {})
         .subscribe(
           () => {
             // console.log('All notifications marked as read');
@@ -95,7 +95,7 @@ export class AdminComponent {
         );
     }
     this.http
-      .get('http://127.0.0.1:8000/api/adminNotifications')
+      .get('https://bushub.000webhostapp.com/api/adminNotifications')
       .subscribe((res: any) => {
         // console.log(res);
         this.notifications = res;

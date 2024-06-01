@@ -13,7 +13,7 @@ export class ContactComponent {
   constructor(private http:HttpClient, private router:Router, private activatedRoute:ActivatedRoute){}
   ContactUsData:any;
   ngOnInit(){
-    this.http.get('http://127.0.0.1:8000/api/contactus').subscribe((res:any)=>{
+    this.http.get('https://bushub.000webhostapp.com/api/contactus').subscribe((res:any)=>{
       this.ContactUsData=res;
       // console.log(res)
     });
@@ -22,7 +22,7 @@ export class ContactComponent {
     this.router.navigate([`admin/single-contact-us/${id}`])
   }
   deleteItem(id: any) {
-    this.http.delete(`http://127.0.0.1:8000/api/contactus/${id}`).subscribe(
+    this.http.delete(`https://bushub.000webhostapp.com/api/contactus/${id}`).subscribe(
       () => {
         // console.log('Item deleted successfully');
         this.removeDeletedItemFromUI(id);
@@ -36,7 +36,7 @@ export class ContactComponent {
     this.ContactUsData = this.ContactUsData?.filter((data: { id: any; }) => data.id !== deletedItemId);
   }
   marAsRead(id:any){
-    this.http.put(`http://127.0.0.1:8000/api/contactus/${id}/update`, {}).subscribe(
+    this.http.put(`https://bushub.000webhostapp.com/api/contactus/${id}/update`, {}).subscribe(
       () => {
         // console.log('Item has been read');
       },

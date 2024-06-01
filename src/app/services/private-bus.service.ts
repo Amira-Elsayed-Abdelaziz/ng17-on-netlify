@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class PrivateBusService {
   constructor(private http:HttpClient) { }
   getPrivateBusRequests(){
-    return this.http.get("http://127.0.0.1:8000/api/private-bus-requests")
+    return this.http.get("https://bushub.000webhostapp.com/api/private-bus-requests")
   }
   getPrivateBusRequestsFromUser(id:any){
-    return this.http.get(`http://127.0.0.1:8000/api/private-bus-requests/${id}`)
+    return this.http.get(`https://bushub.000webhostapp.com/api/private-bus-requests/${id}`)
   }
 }

@@ -10,6 +10,6 @@ export class DestinationService {
 
   getDestinations() {
 
-    return this.http.get('http://127.0.0.1:8000/api/destinations');
+    return this.http.get('https://bushub.000webhostapp.com/api/destinations');
   }
 }

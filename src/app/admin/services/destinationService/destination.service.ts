@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DestinationService {
-  url: string = 'http://127.0.0.1:8000';
+  url: string = 'https://bushub.000webhostapp.com';
   constructor(private http: HttpClient) {}
   listDestinations(token:any) {
     let  httpOptions =new HttpHeaders().set("Authorization","Bearer "+token);

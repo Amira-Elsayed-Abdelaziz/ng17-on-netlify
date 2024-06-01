@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class UserService {
 
-  url: string = 'http://127.0.0.1:8000';
+  url: string = 'https://bushub.000webhostapp.com';
   // private dataSubject = new BehaviorSubject<object>({});
   // private dataSubject: BehaviorSubject<any> = new BehaviorSubject<any>("data");
   // public data$: Observable<any> = this.dataSubject.asObservable();
@@ -26,13 +26,13 @@ export class UserService {
   sendData(formDataJson: any) {
     // console.log(formDataJson);
     // Replace 'http://your-api-url' with your actual API URL
-    return this.http.post('http://127.0.0.1:8000/api/register', formDataJson);
+    return this.http.post('https://bushub.000webhostapp.com/api/register', formDataJson);
   }
 
   login(formDataJson: any) {
     // console.log(formDataJson);
     // Replace 'http://your-api-url' with your actual API URL
-    return this.http.post('http://127.0.0.1:8000/api/login', formDataJson, this.httpOptions);
+    return this.http.post('https://bushub.000webhostapp.com/api/login', formDataJson, this.httpOptions);
   }
 
   private dataSubject = new BehaviorSubject<object>({});
@@ -49,7 +49,7 @@ export class UserService {
   userProfile(token: any) {
     let httpOptions = new HttpHeaders().set("Authorization", "Bearer " + token);
 
-    return this.http.get('http://127.0.0.1:8000/api/profile', { headers: httpOptions });
+    return this.http.get('https://bushub.000webhostapp.com/api/profile', { headers: httpOptions });
 
   }
 
@@ -67,12 +67,12 @@ export class UserService {
     // let  httpOptions =new HttpHeaders().set("Authorization","Bearer "+token);
 
 
-    return this.http.post("http://127.0.0.1:8000/api/edit", userData, httpOptions);
+    return this.http.post("https://bushub.000webhostapp.com/api/edit", userData, httpOptions);
   }
 
   forgetPassword(emailToResetPass: any) {
 
-    return this.http.post("http://127.0.0.1:8000/api/forgot-password", emailToResetPass);
+    return this.http.post("https://bushub.000webhostapp.com/api/forgot-password", emailToResetPass);
   }
 
 
@@ -99,22 +99,22 @@ export class UserService {
 
   verifycode(emailToResetPass: any) {
 
-    return this.http.post("http://127.0.0.1:8000/api/verify-reset-code", emailToResetPass);
+    return this.http.post("https://bushub.000webhostapp.com/api/verify-reset-code", emailToResetPass);
   }
 
 
   resetPassword(dataToResetPass: any) {
 
-    return this.http.post("http://127.0.0.1:8000/api/reset-password", dataToResetPass);
+    return this.http.post("https://bushub.000webhostapp.com/api/reset-password", dataToResetPass);
   }
 
 
 
   signByGoogle(userData: any) {
 
-    // return this.http.post("http://127.0.0.1:8000/api/auth-google", userData);
+    // return this.http.post("https://bushub.000webhostapp.com/api/auth-google", userData);
 
-    return this.http.post("http://127.0.0.1:8000/api/sign-google", userData);
+    return this.http.post("https://bushub.000webhostapp.com/api/sign-google", userData);
 
 
   }
@@ -123,7 +123,7 @@ export class UserService {
 
     let httpOptions = new HttpHeaders().set("Authorization", "Bearer " + token);
 
-    return this.http.post("http://127.0.0.1:8000/api/contactus", details, { headers: httpOptions });
+    return this.http.post("https://bushub.000webhostapp.com/api/contactus", details, { headers: httpOptions });
 
 
   }
@@ -134,7 +134,7 @@ export class UserService {
 
     let httpOptions = new HttpHeaders().set("Authorization", "Bearer " + token);
 
-    return this.http.get("http://127.0.0.1:8000/api/logout", { headers: httpOptions });
+    return this.http.get("https://bushub.000webhostapp.com/api/logout", { headers: httpOptions });
 
 
   }
@@ -148,7 +148,7 @@ export class UserService {
       })
     };
 
-    return this.http.post("http://127.0.0.1:8000/api/uploadimage", formData, httpOptions);
+    return this.http.post("https://bushub.000webhostapp.com/api/uploadimage", formData, httpOptions);
 
   }
 
@@ -156,7 +156,7 @@ export class UserService {
 
     let httpOptions = new HttpHeaders().set("Authorization", "Bearer " + token);
 
-    return this.http.get(`http://127.0.0.1:8000/api/userticket/${trip_id}`, { headers: httpOptions });
+    return this.http.get(`https://bushub.000webhostapp.com/api/userticket/${trip_id}`, { headers: httpOptions });
 
   }
 

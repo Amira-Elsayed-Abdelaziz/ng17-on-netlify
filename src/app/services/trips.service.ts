@@ -12,13 +12,13 @@ export class TripsService {
     // console.log(token);
   let  httpOptions =new HttpHeaders().set("Authorization","Bearer "+token);
 
-    return this.http.get('http://127.0.0.1:8000/api/trip', {headers: httpOptions });
+    return this.http.get('https://bushub.000webhostapp.com/api/trip', {headers: httpOptions });
   }
   userNextTrips(token:any) {
     // console.log(token);
   let  httpOptions =new HttpHeaders().set("Authorization","Bearer "+token);
 
-    return this.http.get('http://127.0.0.1:8000/api/nexttrips', {headers: httpOptions });
+    return this.http.get('https://bushub.000webhostapp.com/api/nexttrips', {headers: httpOptions });
   }
 
 }

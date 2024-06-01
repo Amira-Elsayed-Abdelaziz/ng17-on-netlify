@@ -4,7 +4,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TripService {
-  url: string = 'http://127.0.0.1:8000';
+  url: string = 'https://bushub.000webhostapp.com';
   httpOptions2={
     headers :new HttpHeaders({
       // 'Content-Type':'application/json',

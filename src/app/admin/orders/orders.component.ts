@@ -26,7 +26,7 @@ export class OrdersComponent {
   onRequestAccept(id: any) {
     // console.log(id);
     this.http
-      .put(`http://127.0.0.1:8000/api/private-bus-requests/${id}/accept`, {})
+      .put(`https://bushub.000webhostapp.com/api/private-bus-requests/${id}/accept`, {})
       .subscribe((res: any) => {
         // console.log(res);
         // const index = this.PBRequests.findIndex(
@@ -41,7 +41,7 @@ export class OrdersComponent {
 
   onRequestDecline(id: any) {
     this.http
-      .put(`http://127.0.0.1:8000/api/private-bus-requests/${id}/decline`, {})
+      .put(`https://bushub.000webhostapp.com/api/private-bus-requests/${id}/decline`, {})
       .subscribe((res: any) => {
         // console.log(res);
         this.PBRequests[id - 1].status = 'Rejected';

@@ -7,6 +7,6 @@ import { HttpClient } from '@angular/common/http';
 export class TypeService {
   constructor(private http:HttpClient) { }
   getBusTypes(){
-    return this.http.get("http://127.0.0.1:8000/api/bus-types");
+    return this.http.get("https://bushub.000webhostapp.com/api/bus-types");
   }
 }

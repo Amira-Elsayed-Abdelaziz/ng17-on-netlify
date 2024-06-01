@@ -61,7 +61,7 @@ export class PrivateBusPageComponent {
         'Bearer ' + token
       );
       this.http
-        .post('http://127.0.0.1:8000/api/private-bus', this.formData, {
+        .post('https://bushub.000webhostapp.com/api/private-bus', this.formData, {
           headers: httpOptions,
         })
         .subscribe(

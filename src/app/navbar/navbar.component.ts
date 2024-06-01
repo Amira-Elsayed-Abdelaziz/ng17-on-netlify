@@ -33,7 +33,7 @@ export class NavbarComponent {
     }
     let  httpOptions =new HttpHeaders().set("Authorization","Bearer "+this.token);
     this.http
-      .get(`http://127.0.0.1:8000/api/userNotifications`, {headers:httpOptions})
+      .get(`https://bushub.000webhostapp.com/api/userNotifications`, {headers:httpOptions})
       .subscribe((res: any) => {
         // console.log(res);
         this.notifications = res;
@@ -68,7 +68,7 @@ export class NavbarComponent {
     if (!this.notifiationsOpened) {
       this.notifiationsOpened = !this.notifiationsOpened;
       this.http
-        .put(`http://127.0.0.1:8000/api/notifications/mark-all-read/${id}`, {})
+        .put(`https://bushub.000webhostapp.com/api/notifications/mark-all-read/${id}`, {})
         .subscribe(
           () => {
             // console.log('All notifications marked as read');
@@ -79,7 +79,7 @@ export class NavbarComponent {
         );
     }
     this.http
-      .get('http://127.0.0.1:8000/api/userNotifications')
+      .get('https://bushub.000webhostapp.com/api/userNotifications')
       .subscribe((res: any) => {
         // console.log(res);
         this.notifications = res;

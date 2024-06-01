@@ -23,7 +23,7 @@ export class SingleContactUsComponent {
       const id = params['id'];
       // console.log(id);
       this.http
-        .get(`http://127.0.0.1:8000/api/contactus/${id}`)
+        .get(`https://bushub.000webhostapp.com/api/contactus/${id}`)
          .subscribe((res) => {
           this.contactUsData = res;
           // console.log(res);
