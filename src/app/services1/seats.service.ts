@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class SeatsService {
-  url: string = 'http://localhost:8000';
+  url: string = 'https://bushub.000webhostapp.com';
   constructor(private http: HttpClient) {}
   listseats() {
     return this.http.get<any>(this.url + `/api/seats`);

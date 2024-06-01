@@ -6,7 +6,7 @@ import{HttpClient} from '@angular/common/http'
 })
 export class TripsshowService {
 
-  url:string ="http://localhost:8000"
+  url:string ="https://bushub.000webhostapp.com"
   constructor(private http: HttpClient) { }
   listtrips(){
     return this.http.get<any>(this.url+`/api/tripsjoin`)
